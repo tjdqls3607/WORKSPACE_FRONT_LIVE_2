@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p {
+            /* margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px; */
+            /*  margin-auto : top, bottom 은 삭제, left, right 는 center 정렬 효과가 있다*/
+
+
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+            margin-left: auto;
+
+            border: 1px solid lightslategray;
+            width: 600px;
+
+            /* padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px; */
+
+            /* padding: 50px, 30px, 50px, 30px; */
+
+            text-align: center;
+
+            height: 300px;
+
+            /* inline element 는 margin, padding 은 가질 수 있으나 width, height 를 가질 수 없다. */
+        }
+
+        span {
+            border: 1px solid brown;
+            width: 600px;
+            height: 300px;
+            padding: 50px, 30px, 50px, 30px;
+            margin: 20px,30px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Margin Padding</title>
+</head>
+
+<body>
+    <p>이것은 마진을 테스트 하는 p 태그 입니다.</p>
+    <span>
+        inline element 는 width, height 를 가질 수 없다.
+    </span>
+</body>
+
+</html>

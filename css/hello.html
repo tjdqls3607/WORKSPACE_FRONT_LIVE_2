@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hello.css"> <!-- external 우선순위3 -->
+    <!-- interna 우선순위2 -->
+    <style>
+        #abc {
+            color : rgb(170, 170, 112);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p id="abc">This is a paragraph.</p>
+    <!-- inline 우선순위1 -->
+    <p style="background-color: darksalmon;">This is a paragraph.</p>
+    <p style="background-color:Tomato;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+    </p>
+</body>
+</html>

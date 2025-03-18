@@ -1,0 +1,12 @@
+* {
+    /*background-color: antiquewhite;*/
+    background-image: url("깜비후드.jpg");
+}
+
+h1 {
+    color : rgb(236, 198, 47);
+}
+
+p{
+    font-size: 35px;
+}
