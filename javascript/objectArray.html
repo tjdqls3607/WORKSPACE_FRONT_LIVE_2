@@ -41,12 +41,19 @@
         }
 
         // json <= javascript object 표현을 따른 문자열
+        // javascript object, Array => json
         let studentsJson = JSON.stringify(students);
         console.log(students);
         console.log(studentsJson);
         let studentJson = JSON.stringify(student);
         console.log(student);
         console.log(studentJson);
+
+        // json --> javascript object, Array
+        let student2 = JSON.parse(studentJson);
+        let students2 = JSON.parse(studentsJson);
+        console.log(student2);
+        console.log(students2);
     </script>
 </body>
 </html>
