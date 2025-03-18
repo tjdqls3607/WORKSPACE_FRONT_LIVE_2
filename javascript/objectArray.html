@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object{}
+        let student = {
+            name: "홍길동",
+            phone : '010-1234-5678',
+            age : 30
+        };
+
+        //Array[, ,]
+        let students = [
+            {name: "홍길동", phone : '010-1234-5678', age : 30},
+            {name: "이길동", phone : '010-0000-0000', age : 20}];
+        let numbers = [1, 2, 3, 4];
+        let strs = ['Hello', 'World', 'JavaScript'];
+
+        // javascript type
+        // var, let, const
+        num = 10;
+        let num2 = 20;  // let
+        const num3 = 30; // const
+        //num3 = 33; // 상수 type 에 값 재지정 오류
+
+        //type 별 scope
+        var num = 40;   // var 는 scope 이 없으므로 오류 발생 X
+        // let num2 = 50; // 동일 scope 동일 변수로 오류 발생
+        //const num3 = 40; // 동일 scope 동일 변수로 오류 발생
+
+        //type 별 scope
+        // java 등과 달리 하위 scope 을 새로운 scope 로 간주, 아래코드는 오류 발생X
+        {
+            let num2 = 50;
+            const num3 = 40;
+        }
+    </script>
+</body>
+</html>
