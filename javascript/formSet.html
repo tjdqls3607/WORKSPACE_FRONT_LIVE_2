@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
     <div id="container">
         <form id="loginForm" action="">
@@ -46,47 +48,118 @@
         </form>
         <br />
         <input id="btnRegister" type="button" value="가입하기" />
-        <hr />
-        <form id="searchForm" action="">
-            <label for="searchWord">검색어</label>
-            <input id="searchWord" type="text" />
-            <input id="btnSearch" type="button" value="검색" />
-        </form>
+        
+        <hr>
+        <label for="userData">사용자 정보</label><br>
+        <input id="userData" type="text" /><br>
+        <button id="setName">이름</button> <button id="setEmail">e-mail</button> <button id="setDesc">기타</button>
+        <br>
+        <button id="setMale">남</button> <button id="setFemale">여</button>
+        <br>
+        <button id="setMovieOn">영화 On</button> <button id="setMovieOff">영화 Off</button>
+        <button id="setSportOn">스포츠 On</button> <button id="setSportOff">스포츠 Off</button>
+        <button id="setMungOn">멍 On</button> <button id="setMungOff">멍 Off</button>
+        <button id="setHobbyAllOn">취미 전체 On</button> <button id="setHobbyAllOff">취미 전체 Off</button>
+        <br>
+        <button id="setCSOn">Computer Science On</button> <button id="setCSOff">Computer Science Off</button>
+        <button id="setHIOn">History On</button> <button id="setHIOff">History Off</button>
+        <button id="setKLOn">한국어 On</button> <button id="setKLOff">한국어 Off</button>
+        <button id="setMajorAllOn">전공 전체 On</button> <button id="setMajorAllOff">전공 전체 Off</button>
     </div>
     <script>
         // 이미 문서의 마지막에 script 를 넣고 있지만, 조금 더 안전한 ( dom 문서의 처리가 완료된 후 실행 ) 방법
-        window.onload = function(){
-            // login
-            document.querySelector("#btnLogin").onclick = function(){
-                console.log( document.querySelector("#domain").value );
-                console.log( document.querySelector("#userId").value );
-                console.log( document.querySelector("#password").value );
+        // let userData = document.querySelector("#userData");
+        window.onload = function () {
+           // name, email, 기타
+           document.querySelector("#setName").onclick = function () {
+               document.querySelector("#userName").value = document.querySelector("#userData").value;
+           }
+
+           document.querySelector("#setEmail").onclick = function () {
+               document.querySelector("#userEmail").value = document.querySelector("#userData").value;
+           }
+
+           document.querySelector("#setDesc").onclick = function () {
+               document.querySelector("#desc").value = document.querySelector("#userData").value;
+           }
+
+           document.querySelector("#setMale").onclick = function () {
+               document.querySelector("#male").checked = true;  // female 은 false
+           }
+
+           document.querySelector("#setFemale").onclick = function () {
+               document.querySelector("#female").checked = true;  // male 은 false
+           }
+
+           //checkbox 취미
+           document.querySelector("#setMovieOn").onclick = function () {
+               document.querySelector("#movie").checked = true;  // 개별적으로 true, false 처리
+           }
+
+            document.querySelector("#setMovieOff").onclick = function () {
+               document.querySelector("#movie").checked = false;  // 개별적으로 true, false 처리
+           }
+
+           document.querySelector("#setSportOn").onclick = function () {
+               document.querySelector("#sport").checked = true;  
+           }
+
+            document.querySelector("#setSportOff").onclick = function () {
+               document.querySelector("#sport").checked = false;  
+           }
+
+           document.querySelector("#setMungOn").onclick = function () {
+               document.querySelector("#mung").checked = true;  
+           }
+
+            document.querySelector("#setMungOff").onclick = function () {
+               document.querySelector("#mung").checked = false; 
             }
-            // register
-            document.querySelector("#btnRegister").onclick = function(){
-                // userName, userEmail
-                console.log( document.querySelector("#userName").value );
-                console.log( document.querySelector("#userEmail").value );
-                // radio
-                // 전체 radio 중 선택된 항목의 value
-                console.log( document.querySelector("input[name='gender']:checked").value );
-                // 개별 radio 항목에 대한 선택 여부
-                // if( document.querySelector("#male").checked ) console.log( "male checked")
-                // if( document.querySelector("input[name='gender'][value='F']").checked ) console.log( "female checked")
-                // checkbox ( 0 ~ 여러개 )
-                document.querySelectorAll("input[name='hobby']:checked").forEach ( el => console.log( el.value ) );
-                // select ( 1 개 )
-                // console.log( document.querySelector("#major option:checked").value );
-                // select ( 여러개 )
-                document.querySelectorAll("#major option:checked").forEach ( el => console.log( el.value ) );
-                // textarea
-                console.log( document.querySelector("#desc").value );
-            }
-            // search
-            document.querySelector("#btnSearch").onclick = function(){
-                console.log( document.querySelector("#searchWord").value );
-            }
+
+            document.querySelector("#setHobbyAllOn").onclick = function () {
+               document.querySelectorAll("input[name = 'hobby']").forEach(e1 => e1.checked = true);
+           }
+
+           document.querySelector("#setHobbyAllOff").onclick = function () {
+               document.querySelectorAll("input[name = 'hobby']").forEach(e1 => e1.checked = false);
+           }
+
+           // selected 전공
+           // checked X , selected O
+           document.querySelector("#setCSOn").onclick = function () {
+               document.querySelector("#major option[value = 'CS']"). selected = true;  
+           }
+
+           document.querySelector("#setCSOff").onclick = function () {
+               document.querySelector("#major option[value = 'CS']"). selected = false;  
+           }
+
+           document.querySelector("#setHIOn").onclick = function () {
+               document.querySelector("#major option[value = 'HI']"). selected = true;  
+           }
+
+           document.querySelector("#setHIOff").onclick = function () {
+               document.querySelector("#major option[value = 'HI']"). selected = false;  
+           }
+
+           document.querySelector("#setKLOn").onclick = function () {
+               document.querySelector("#major option[value = 'KL']"). selected = true;  
+           }
+
+           document.querySelector("#setKLOff").onclick = function () {
+               document.querySelector("#major option[value = 'KL']"). selected = false;  
+           }
+
+           //select 전공 전체
+           document.querySelector("#setMajorAllOn").onclick = function () {
+               document.querySelectorAll("#major option").forEach(e1 => e1.selected = true);
+           }
+
+           document.querySelector("#setMajorAllOff").onclick = function () {
+               document.querySelectorAll("#major option").forEach(e1 => e1.selected = false);
+           }
         }
     </script>
 </body>
+
 </html>
